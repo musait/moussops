@@ -96,7 +96,7 @@
             <input type="email" required placeholder="Ton email"
                    class="flex-1 w-full bg-white/80 border border-black/10 rounded-xl px-4 py-3
                           text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90">
-            <button class="btn btn-primary w-full sm:w-auto">Rejoindre la liste d’attente →</button>
+            <button class="btn btn-primary w-full sm:w-auto flex justify-center">Rejoindre la liste d’attente →</button>
           </div>
         </form>
       </div>
@@ -126,8 +126,10 @@
             </div>
             <div class="card py-4">
               <div class="flex justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 20c4.41 0 8-3.59 8-8s-3.59-8-8-8-8 3.59-8 8 3.59 8 8 8zm.5-13h-1v6l5.25 3.15.75-1.23-5-2.92V7z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                     class="w-10 h-10 fill-current text-[var(--terracotta)]" 
+                     viewBox="0 0 24 24">
+                  <path d="M6 2a1 1 0 0 0-1 1v3c0 2.21 1.79 4 4 4v2c-2.21 0-4 1.79-4 4v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3c0-2.21-1.79-4-4-4v-2c2.21 0 4-1.79 4-4V3a1 1 0 0 0-1-1H6zm11 2v2c0 1.1-.9 2-2 2H9c-1.1 0-2-.9-2-2V4h10zm0 12v2H7v-2c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2z"/>
                 </svg>
               </div>
               <div class="mt-1 text-sm text-[var(--muted)]">– Perte de temps</div>
@@ -256,7 +258,7 @@
   <section class="section">
     <div class="container container-pad text-center card p-6 sm:p-10">
       <p class="kicker">Passer à l’action</p>
-      <h2 class="title mt-2">Commence aujourd’hui !<br class="hidden sm:block">Et ne laisse plus tes prospects filer.</h2>
+      <h2 class="title mt-2">Commence aujourd’hui !<br class="hidden sm:block"><br>Et ne laisse plus tes prospects filer.</h2>
       <p class="subtitle mt-3 max-w-3xl mx-auto">
         Rejoins la liste d’attente et reçois notre mini-guide pour mettre en place ton système en 20 minutes.
       </p>
@@ -268,8 +270,7 @@
                       text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-80
                       border border-black/10">
         <div class="mt-3 flex flex-col sm:flex-row gap-3 justify-center">
-          <button class="btn btn-primary w-full sm:w-auto">Je m’inscris →</button>
-          <a href="#top" class="btn btn-ghost w-full sm:w-auto">En savoir plus</a>
+          <button class="btn btn-primary w-full sm:w-auto flex justify-center">Je m’inscris →</button>
         </div>
       </form>
 
