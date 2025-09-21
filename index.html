@@ -90,7 +90,7 @@
         </p>
 
         <!-- Mobile: champ + bouton full width ; Desktop: comme avant -->
-        <form id="waitlistForm" class="mt-6 sm:mt-7 card p-3 sm:p-4" action="https://formspree.io/f/xdkwnklz" method="POST">
+        <form id="waitlistForm1" class="mt-6 sm:mt-7 card p-3 sm:p-4" action="https://formspree.io/f/xdkwnklz" method="POST">
           <div class="flex flex-col sm:flex-row gap-3">
             <!-- Champ email -->
             <input
@@ -111,8 +111,9 @@
           </div>
         
           <!-- Feedback -->
-          <p id="waitlistOk" class="mt-3 hidden text-green-700">Merci ! Vérifie ta boîte mail 😊</p>
-          <p id="waitlistErr" class="mt-3 hidden text-[var(--terracotta)]">Oups… ça n’a pas marché. Réessaie dans un instant.</p>
+          <p id="confirmation" style="display:none; color:green; margin-top:1rem;">
+            Merci 🙌 Tu recevras ton mini-guide dans quelques minutes.
+          </p>
         </form>
       </div>
 
@@ -279,7 +280,7 @@
       </p>
 
       <!-- Mobile: input + boutons empilés ; Desktop: identique à avant -->
-     <form id="waitlistForm" class="mt-6 sm:mt-7 card p-3 sm:p-4" action="https://formspree.io/f/xdkwnklz" method="POST">
+     <form id="waitlistForm2" class="mt-6 sm:mt-7 card p-3 sm:p-4" action="https://formspree.io/f/xdkwnklz" method="POST">
           <div class="flex flex-col sm:flex-row gap-3">
             <!-- Champ email -->
             <input
@@ -300,9 +301,9 @@
           </div>
         
           <!-- Feedback -->
-      <p id="confirmation" style="display:none; color:green; margin-top:1rem;">
-        Merci 🙌 Tu recevras ton mini-guide dans quelques minutes.
-      </p>
+          <p id="confirmation" style="display:none; color:green; margin-top:1rem;">
+            Merci 🙌 Tu recevras ton mini-guide dans quelques minutes.
+          </p>
 
       <script>
         const form = document.getElementById("waitlistForm");
