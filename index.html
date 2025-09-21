@@ -90,14 +90,29 @@
         </p>
 
         <!-- Mobile: champ + bouton full width ; Desktop: comme avant -->
-        <form class="mt-6 sm:mt-7 card p-3 sm:p-4"
-              onsubmit="event.preventDefault(); alert('Merci ! Nous te recontactons très vite.');">
+        <form id="waitlistForm" class="mt-6 sm:mt-7 card p-3 sm:p-4" action="https://formspree.io/f/xdkwnklz" method="POST">
           <div class="flex flex-col sm:flex-row gap-3">
-            <input type="email" required placeholder="Ton email"
-                   class="flex-1 w-full bg-white/80 border border-black/10 rounded-xl px-4 py-3
-                          text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90">
-            <button class="btn btn-primary w-full sm:w-auto flex justify-center">Rejoindre la liste d’attente →</button>
+            <!-- Champ email -->
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Ton email"
+              class="flex-1 w-full bg-white/80 border border-black/10 rounded-xl px-4 py-3
+                     text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90" />
+        
+            <!-- Champ anti-spam (honeypot) -->
+            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+        
+            <!-- Bouton -->
+            <button id="waitlistBtn" class="btn btn-primary w-full sm:w-auto flex justify-center text-center">
+              Rejoindre la liste d’attente →
+            </button>
           </div>
+        
+          <!-- Feedback -->
+          <p id="waitlistOk" class="mt-3 hidden text-green-700">Merci ! Vérifie ta boîte mail 😊</p>
+          <p id="waitlistErr" class="mt-3 hidden text-[var(--terracotta)]">Oups… ça n’a pas marché. Réessaie dans un instant.</p>
         </form>
       </div>
 
@@ -264,15 +279,30 @@
       </p>
 
       <!-- Mobile: input + boutons empilés ; Desktop: identique à avant -->
-      <form class="mt-6 sm:mt-7" onsubmit="event.preventDefault(); alert('Merci ! On t’envoie tout par email.');">
-        <input type="email" required placeholder="Ton email"
-               class="block w-full max-w-xl mx-auto bg-white/80 px-4 py-3 rounded-xl
-                      text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-80
-                      border border-black/10">
-        <div class="mt-3 flex flex-col sm:flex-row gap-3 justify-center">
-          <button class="btn btn-primary w-full sm:w-auto flex justify-center">Je m’inscris →</button>
-        </div>
-      </form>
+     <form id="waitlistForm" class="mt-6 sm:mt-7 card p-3 sm:p-4" action="https://formspree.io/f/xdkwnklz" method="POST">
+          <div class="flex flex-col sm:flex-row gap-3">
+            <!-- Champ email -->
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Ton email"
+              class="flex-1 w-full bg-white/80 border border-black/10 rounded-xl px-4 py-3
+                     text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90" />
+        
+            <!-- Champ anti-spam (honeypot) -->
+            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+        
+            <!-- Bouton -->
+            <button id="waitlistBtn" class="btn btn-primary w-full sm:w-auto flex justify-center text-center">
+              Rejoindre la liste d’attente →
+            </button>
+          </div>
+        
+          <!-- Feedback -->
+          <p id="waitlistOk" class="mt-3 hidden text-green-700">Merci ! Vérifie ta boîte mail 😊</p>
+          <p id="waitlistErr" class="mt-3 hidden text-[var(--terracotta)]">Oups… ça n’a pas marché. Réessaie dans un instant.</p>
+        </form>
 
       <div class="mt-5 text-sm text-[var(--muted)]">Zéro spam. Désinscription en un clic.</div>
       <div class="divider my-8"></div>
