@@ -336,19 +336,14 @@
 	      if (btn) { btn.disabled = true; btn.style.opacity = .7; btn.textContent = 'Envoi…'; }
 	
 	      try {
-		    const data = {
-		      first_name: e.target.first_name.value.trim(),
-		      email: e.target.email.value.trim(),
-		      source: 'landing'
-		    };
-		
-		    const res = await fetch(URL, {
-		      method: 'POST',
-		      headers: {'Content-Type': 'application/json'},
-		      body: JSON.stringify(data)
-		    });
-		
-		    if (res.ok) {
+	        const data = new FormData(form);
+	        const res  = await fetch(form.action, {
+	          method: 'POST',
+	          body: data,
+	          headers: { 'Accept': 'application/json' }
+	        });
+	
+	        if (res.ok) {
 	          form.reset();
 	          ok && ok.classList.remove('hidden');
 	        } else {
