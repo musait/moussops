@@ -8,27 +8,27 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root{
-      --ivory:#f6f1e9;         /* texte clair / fond */
+      --ivory:#f6f1e9;         /* fond clair */
       --terracotta:#D97B66;    /* accent principal */
       --pastel:#F4A261;        /* accent doux */
       --ink:#0E0F12;           /* très sombre */
-      --slate:#1A1C21;         /* surfaces */
       --muted:#2C3E50;         /* texte secondaire */
     }
 
-    /* Dégradés d’ambiance (laisse comme avant) */
-    .noise{position:relative; isolation:isolate;}
+    html, body { overflow-x:hidden; background:var(--ivory); color:var(--ink); }
+
+    /* Fond d'ambiance, sans débordement horizontal */
+    .noise{position:relative; isolation:isolate; overflow:hidden;}
     .noise:before{
-      content:""; position:absolute; inset:-20vh -20vw; z-index:-1; pointer-events:none;
+      content:""; position:absolute; inset:-12rem; z-index:-1; pointer-events:none;
       background:
-        radial-gradient(60rem 60rem at 10% -10%, rgba(217,123,102,.25), transparent 60%),
-        radial-gradient(50rem 50rem at 110% 10%, rgba(244,162,97,.18), transparent 55%),
-        radial-gradient(80rem 70rem at 50% 120%, rgba(217,123,102,.22), transparent 60%);
-      filter:saturate(1.1);
+        radial-gradient(55rem 55rem at 10% -10%, rgba(217,123,102,.22), transparent 60%),
+        radial-gradient(48rem 48rem at 110% 10%, rgba(244,162,97,.16), transparent 55%),
+        radial-gradient(65rem 60rem at 50% 120%, rgba(217,123,102,.18), transparent 60%);
+      filter:saturate(1.05);
     }
 
-    /* Card comme au départ (desktop inchangé) */
-		.card{
+    .card{
       background:linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.35));
       border:1px solid rgba(0,0,0,.08);
       border-radius:20px;
@@ -47,11 +47,6 @@
       color:white; box-shadow:0 8px 24px rgba(217,123,102,.35);
     }
     .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(217,123,102,.45); }
-    .btn-ghost{
-      border:1px solid rgba(0,0,0,.14); color:#2C3E50;
-      background:rgba(255,255,255,.6);
-      backdrop-filter:saturate(1.2) blur(2px);
-    }
 
     .badge{
       display:inline-flex; align-items:center; gap:.5rem;
@@ -59,29 +54,22 @@
       border:1px solid rgba(0,0,0,.12); color:var(--terracotta);
       background:rgba(255,255,255,.6);
     }
-    /* wrappers */
-    .section{padding:clamp(2.5rem, 6vw, 6rem) 0; text-align:center;}
-    .container{max-width:1150px; margin-inline:auto;}
-    .container-pad{padding-left:1rem; padding-right:1rem;}           /* mobile */
-    @media (min-width:640px){ .container-pad{padding-left:1.5rem; padding-right:1.5rem;} } /* sm+ */
 
-    .kicker{color:var(--muted); font-size:2rem; letter-spacing:.15em; text-transform:uppercase;}
+    .section{padding:clamp(2.5rem, 6vw, 6rem) 0; text-align:center;}
+    .kicker{color:var(--muted); font-size:.9rem; letter-spacing:.15em; text-transform:uppercase;}
     .title{font-size:clamp(2rem, 5vw, 3.5rem); line-height:1.05; font-weight:800;}
     .subtitle{color:var(--muted); font-size:clamp(1rem, 2vw, 1.15rem);}
-    .list-dot li::marker{color:var(--terracotta);}
     .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(0,0,0,.12), transparent);}
-    .logo-pill{border:1px solid rgba(0,0,0,.14); border-radius:999px; padding:.4rem .8rem; color:var(--muted);}
-    input,button{outline:none}
+    img{max-width:100%; height:auto;}
   </style>
 </head>
 
-<body class="bg-[var(--ivory)] text-[var(--ink)]">
-
+<body class="noise">
   <!-- HERO -->
   <header class="section">
-    <div class="container container-pad grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <div class="mx-auto max-w-[1150px] px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       <div class="lg:col-span-7 text-center lg:text-left">
-        <h1 class="title mt-1 text-[var(--terracotta)]">
+        <h1 class="title mt-1 text-[var(--terracotta)] break-words">
           Ne laisse plus tes <span class="text-black">prospects filer</span>.
         </h1>
         <p class="subtitle mt-4">
@@ -89,44 +77,41 @@
           contenus, automatisations et suivi — sans t’ajouter une charge mentale.
         </p>
 
-        <!-- Mobile: champ + bouton full width ; Desktop: comme avant -->
-    <form
-      class="mt-6 sm:mt-7 card p-3 sm:p-4 js-waitlist"
-      action="https://hook.eu2.make.com/h6thocpoa29kf47t8l2b58d9zh5mt8lj"
-      method="POST">
-        <div style="flex flex-col sm:flex-row gap-3">
-
-  <!-- Champs prénom + email -->
-          <div style="display:flex; gap:10px; width:100%;">
-            <input type="text" 
-                   placeholder="Ton prénom" 
-                   style="flex:1; padding:14px; border:1px solid #ddd; border-radius:8px; font-size:14px;"
-				   id="firstName"
-                   class="text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90">
-			  	   
-            <input type="email" 
-                   placeholder="Ton email"
-					id="email"
-                   style="flex:1; padding:14px; border:1px solid #ddd; border-radius:8px; font-size:14px;"
-                   class="text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90">
+        <!-- FORMULAIRE 1 -->
+        <form
+          class="mt-6 sm:mt-7 card p-3 sm:p-4 js-waitlist"
+          action="https://hook.eu2.make.com/h6thocpoa29kf47t8l2b58d9zh5mt8lj"
+          method="POST"
+        >
+          <div class="flex flex-col sm:flex-row gap-3 w-full">
+            <input
+              type="text" name="first_name" id="first_name" required
+              placeholder="Ton prénom"
+              class="flex-1 px-4 py-3 rounded-lg border border-gray-200 text-[var(--muted)]
+                     placeholder:text-[var(--terracotta)] placeholder:opacity-90"
+            />
+            <input
+              type="email" name="email" id="email" required
+              placeholder="Ton email"
+              class="flex-1 px-4 py-3 rounded-lg border border-gray-200 text-[var(--muted)]
+                     placeholder:text-[var(--terracotta)] placeholder:opacity-90"
+            />
           </div>
-        
-          <!-- Bouton -->
-          <button class="btn btn-primary w-full sm:w-auto flex justify-center" style="margin-top:20px">
+
+          <button type="submit" data-role="submit"
+            class="btn btn-primary w-full sm:w-auto justify-center mt-5 sm:mt-4">
             Rejoindre la liste d’attente →
           </button>
-        </div>
 
-	  <!-- messages -->
-	  <p class="mt-3 hidden text-green-700 js-ok">Merci 🙌 Vérifie ta boîte mail.</p>
-	  <p class="mt-3 hidden text-red-700 js-err">Oups… réessaie dans un instant.</p>
-	</form>
+          <p class="mt-3 hidden text-green-700 js-ok">Merci 🙌 Vérifie ta boîte mail.</p>
+          <p class="mt-3 hidden text-red-700 js-err">Oups… réessaie dans un instant.</p>
+        </form>
       </div>
 
       <div class="lg:col-span-5">
         <div class="card p-4 sm:p-6">
           <p class="kicker">En bref</p>
-          <h3 class="text-xl sm:text-2xl font-semibold mt-2 text-[var(--terracotta)]">
+          <h3 class="text-3xl md:text-4xl font-bold mt-2">
             Plus de prospects, simplement.
           </h3>
           <ul class="ms-5 mt-3 space-y-2 text-[var(--muted)] text-left max-w-md mx-auto">
@@ -136,7 +121,6 @@
           </ul>
           <div class="divider my-6"></div>
 
-          <!-- 3 colonnes avec icônes (mobile 1 colonne) -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-[var(--terracotta)]">
             <div class="card py-4">
               <div class="flex justify-center">
@@ -148,9 +132,7 @@
             </div>
             <div class="card py-4">
               <div class="flex justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" 
-                     class="w-10 h-10 fill-current text-[var(--terracotta)]" 
-                     viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 sm:w-10 sm:h-10 fill-current" viewBox="0 0 24 24">
                   <path d="M6 2a1 1 0 0 0-1 1v3c0 2.21 1.79 4 4 4v2c-2.21 0-4 1.79-4 4v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3c0-2.21-1.79-4-4-4v-2c2.21 0 4-1.79 4-4V3a1 1 0 0 0-1-1H6zm11 2v2c0 1.1-.9 2-2 2H9c-1.1 0-2-.9-2-2V4h10zm0 12v2H7v-2c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2z"/>
                 </svg>
               </div>
@@ -170,9 +152,9 @@
     </div>
   </header>
 
-  <!-- CE QUE FAIT IMMOFLOW (BUSINESS) -->
+  <!-- CE QUE FAIT IMMOFLOW -->
   <section class="section">
-    <div class="container container-pad">
+    <div class="mx-auto max-w-[1150px] px-4 sm:px-6">
       <p class="kicker">Ce que nous faisons</p>
       <h2 class="text-3xl md:text-4xl font-bold mt-2 text-[var(--terracotta)]">ImmoFlow, ton système de prospection</h2>
       <p class="subtitle mt-3 max-w-3xl mx-auto">
@@ -199,7 +181,7 @@
 
   <!-- PROBLÉMATIQUE CIBLÉE -->
   <section class="section">
-    <div class="container container-pad">
+    <div class="mx-auto max-w-[1150px] px-4 sm:px-6">
       <p class="kicker">Le vrai problème</p>
       <h2 class="text-3xl md:text-4xl font-bold mt-2">
         Tu n’as pas “peu de prospects”.<br>
@@ -210,13 +192,7 @@
         <div class="card p-6">
           <div class="flex justify-center text-[var(--terracotta)]">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-10 md:h-10 fill-current" viewBox="0 0 24 24">
-              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 
-                       0-3 1.34-3 3s1.34 3 3 3zm-8 
-                       0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 
-                       5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 
-                       2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 
-                       0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 
-                       1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
             </svg>
           </div>
           <h3 class="mt-2 font-semibold">Dépendance au bouche-à-oreille</h3>
@@ -236,11 +212,7 @@
         <div class="card p-6">
           <div class="flex justify-center text-[var(--terracotta)]">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-10 md:h-10 fill-current" viewBox="0 0 24 24">
-              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 
-                       0-2 .9-2 2v16c0 1.1.9 2 
-                       2 2h14c1.1 0 2-.9 
-                       2-2V5c0-1.1-.9-2-2-2zm0 
-                       18H5V8h14v13zM7 10h5v5H7v-5z"/>
+              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H5V8h14v13zM7 10h5v5H7v-5z"/>
             </svg>
           </div>
           <h3 class="mt-2 font-semibold">Suivi irrégulier</h3>
@@ -249,10 +221,9 @@
       </div>
     </div>
   </section>
-
   <!-- COMMENT ON TRAVAILLE -->
   <section class="section">
-    <div class="container container-pad">
+    <div class="mx-auto max-w-[1150px] px-4 sm:px-6">
       <p class="kicker">Notre méthode</p>
       <h2 class="text-3xl md:text-4xl font-bold mt-2 text-[var(--terracotta)]">On installe un système en 3 étapes</h2>
 
@@ -278,96 +249,91 @@
 
   <!-- CTA FINAL -->
   <section class="section">
-    <div class="container container-pad text-center card p-6 sm:p-10">
+    <div class="mx-auto max-w-[1150px] px-4 sm:px-6 text-center card p-6 sm:p-10">
       <p class="kicker">Passer à l’action</p>
       <h2 class="title mt-2">Commence aujourd’hui !<br class="hidden sm:block"><br>Et ne laisse plus tes prospects filer.</h2>
       <p class="subtitle mt-3 max-w-3xl mx-auto">
         Rejoins la liste d’attente et reçois notre mini-guide pour mettre en place ton système en 20 minutes.
       </p>
 
-      <!-- Mobile: input + boutons empilés ; Desktop: identique à avant -->
-	    <form
-          class="mt-6 sm:mt-7 card p-3 sm:p-4 js-waitlist"
-          action="https://hook.eu2.make.com/h6thocpoa29kf47t8l2b58d9zh5mt8lj"
-          method="POST">
-  	        <div style="display:flex; gap:10px; width:100%;">
-                <input type="text" 
-                       placeholder="Ton prénom" 
-                       style="flex:1; padding:14px; border:1px solid #ddd; border-radius:8px; font-size:14px;"
-						id="firstName"
-                       class="text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90">
-                <input type="email" 
-                       placeholder="Ton email"
-					   id="email"
-                       style="flex:1; padding:14px; border:1px solid #ddd; border-radius:8px; font-size:14px;"
-                       class="text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90">
-          <!-- Bouton -->
-               <button class="btn btn-primary w-full sm:w-auto flex justify-center" style="margin-top:20px">
-                Rejoindre la liste d’attente →
-                </button>
-            </div>
+      <!-- FORMULAIRE 2 -->
+      <form
+        class="mt-6 sm:mt-7 card p-3 sm:p-4 js-waitlist"
+        action="https://hook.eu2.make.com/h6thocpoa29kf47t8l2b58d9zh5mt8lj"
+        method="POST"
+      >
+        <div class="flex flex-col sm:flex-row gap-3 w-full">
+          <input
+            type="text" name="first_name" id="first_name" required placeholder="Ton prénom"
+            class="flex-1 px-4 py-3 rounded-lg border border-gray-200 text-[var(--muted)]
+                   placeholder:text-[var(--terracotta)] placeholder:opacity-90"
+          />
+          <input
+            type="email" name="email" id="email" required placeholder="Ton email"
+            class="flex-1 px-4 py-3 rounded-lg border border-gray-200 text-[var(--muted)]
+                   placeholder:text-[var(--terracotta)] placeholder:opacity-90"
+          />
+        </div>
 
-	  <!-- messages -->
-    	  <p class="mt-3 hidden text-green-700 js-ok">Merci 🙌 Vérifie ta boîte mail.</p>
-    	  <p class="mt-3 hidden text-red-700 js-err">Oups… réessaie dans un instant.</p>
-    	</form>
+        <button type="submit" data-role="submit"
+          class="btn btn-primary w-full sm:w-auto justify-center mt-5 sm:mt-4">
+          Rejoindre la liste d’attente →
+        </button>
+
+        <p class="mt-3 hidden text-green-700 js-ok">Merci 🙌 Vérifie ta boîte mail.</p>
+        <p class="mt-3 hidden text-red-700 js-err">Oups… réessaie dans un instant.</p>
+      </form>
 
       <div class="mt-5 text-sm text-[var(--muted)]">Zéro spam. Désinscription en un clic.</div>
       <div class="divider my-8"></div>
 
-      <img src="logo__immo_transparent.png" alt="ImmoFlow" class="mx-auto opacity-85" width="160", length= "160">
+      <img src="logo__immo_transparent.png" alt="ImmoFlow" class="mx-auto opacity-85" width="160" height="160" />
     </div>
   </section>
 
   <footer class="section pt-0 text-center text-sm text-[var(--muted)]">
-    © 2025 ImmoFlow — Tous droits réservés <a href="/privacy-policy.html" class="underline hover:text-[var(--terracotta)]">Politique de confidentialité</a>
+    © 2025 ImmoFlow — Tous droits réservés ·
+    <a href="/privacy-policy.html" class="underline hover:text-[var(--terracotta)]">Politique de confidentialité</a>
   </footer>
 
+  <script>
+  (() => {
+    const forms = document.querySelectorAll('form.js-waitlist');
+    if (!forms.length) return;
+
+    forms.forEach((form) => {
+      const btn = form.querySelector('[data-role="submit"]');
+      const ok  = form.querySelector('.js-ok');
+      const err = form.querySelector('.js-err');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        ok?.classList.add('hidden');
+        err?.classList.add('hidden');
+        if (btn) { btn.disabled = true; btn.style.opacity = .7; btn.textContent = 'Envoi…'; }
+
+        try {
+          const fd = new FormData();
+          fd.append('first_name', form.querySelector('[name="first_name"]').value.trim());
+          fd.append('email', form.querySelector('[name="email"]').value.trim());
+          fd.append('source', 'landing');
+
+          const res = await fetch(form.action, { method: 'POST', body: fd });
+
+          if (res.ok) {
+            form.reset();
+            ok?.classList.remove('hidden');
+          } else {
+            err?.classList.remove('hidden');
+          }
+        } catch {
+          err?.classList.remove('hidden');
+        } finally {
+          if (btn) { btn.disabled = false; btn.style.opacity = 1; btn.textContent = 'Rejoindre la liste d’attente →'; }
+        }
+      });
+    });
+  })();
+  </script>
 </body>
-<script>
-	(() => {
-	  const forms = document.querySelectorAll('form.js-waitlist');
-	  if (!forms.length) return;
-	
-	  forms.forEach((form) => {
-	    const btn = form.querySelector('[data-role="submit"]') || form.querySelector('button[type="submit"]');
-	    const ok  = form.querySelector('.js-ok');
-	    const err = form.querySelector('.js-err');
-	
-	    form.addEventListener('submit', async (e) => {
-	      e.preventDefault();
-	      ok && ok.classList.add('hidden');
-	      err && err.classList.add('hidden');
-	      if (btn) { btn.disabled = true; btn.style.opacity = .7; btn.textContent = 'Envoi…'; }
-	
-	      try {
-	        const data = {
-      first_name: e.target.first_name.value.trim(),
-      email: e.target.email.value.trim(),
-      source: 'landing'
-    };
-	        const res  = await fetch(form.action, {
-	          method: 'POST',
-	          body: JSON.stringify({
-			    first_name: document.getElementById("firstName").value,
-			    email: document.getElementById("email").value
-			  }),
-	          headers: { 'Accept': 'application/json' }
-	        });
-	
-	        if (res.ok) {
-	          form.reset();
-	          ok && ok.classList.remove('hidden');
-	        } else {
-	          err && err.classList.remove('hidden');
-	        }
-	      } catch {
-	        err && err.classList.remove('hidden');
-	      } finally {
-	        if (btn) { btn.disabled = false; btn.style.opacity = 1; btn.textContent = 'Rejoindre la liste d’attente →'; }
-	      }
-	    });
-	  });
-	})();
-</script>
 </html>
