@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Politique de confidentialité — ImmoFlow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <style>
+    :root{
+      --bg:#f6f1e9;
+      --card:#ffffff;
+      --ink:#1a1c21;
+      --muted:#475569;
+      --terracotta:#D97B66;
+      --border:#efe5dc;
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    .wrap{max-width:900px;margin:auto;padding:40px 20px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.06);padding:28px}
+    h1{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:.2rem 0 1rem;color:var(--terracotta);font-weight:800}
+    h2{font-size:clamp(20px,2.8vw,26px);margin:2rem 0 .5rem}
+    h3{font-size:18px;margin:1.2rem 0 .25rem}
+    p{margin:.6rem 0;color:var(--muted)}
+    ul{margin:.4rem 0 .8rem 1.1rem;color:var(--muted)}
+    .kicker{letter-spacing:.14em;text-transform:uppercase;color:#6b7280;font-size:.8rem}
+    .note{background:#fff6ef;border:1px solid #fde6db;border-radius:12px;padding:12px 14px;color:#7c2d12;font-size:.95rem}
+    .meta{margin-top:22px;color:#64748b;font-size:.9rem}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,#ece2d9,transparent);margin:22px 0}
+    a{color:var(--terracotta);text-decoration:underline}
+    .brand{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .brand img{height:36px;width:auto;display:block}
+    .footer{margin-top:18px;text-align:center;color:#94a3b8;font-size:.85rem}
+    @media (max-width:640px){.card{padding:22px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <div class="brand">
+        <div class="kicker">Politique de confidentialité</div>
+      </div>
+      <h1>Protection des données — ImmoFlow</h1>
+      <p class="meta">Dernière mise à jour&nbsp;: <strong>22/09/2025</strong></p>
+
+      <p>La présente politique explique comment <strong>ImmoFlow</strong> («&nbsp;nous&nbsp;», «&nbsp;notre&nbsp;», «&nbsp;nos&nbsp;») collecte, utilise et protège vos informations personnelles lorsque vous utilisez notre site <a href="https://immoflow.vercel.app">immoflow.vercel.app</a> et nos services.</p>
+
+      <div class="divider"></div>
+
+      <h2>1) Responsable du traitement</h2>
+      <p>
+        <strong>Immoflow</strong><br>
+        44 Rue Auguste Gal 06300 Nice<br>
+        Email&nbsp;: <a href="mailto:ait.mus06@gmail.com">Email</a><br>
+      </p>
+
+      <h2>2) Données que nous collectons</h2>
+      <ul>
+        <li><strong>Données d’identification&nbsp;:</strong> nom, prénom (si fournis), adresse e-mail.</li>
+        <li><strong>Données d’usage&nbsp;:</strong> pages consultées, événements (clics, conversions), device, adresse IP raccourcie/anonymisée.</li>
+        <li><strong>Prospection/CRM&nbsp;:</strong> préférences déclarées (ex. type de bien, budget) lorsque vous nous les communiquez.</li>
+      </ul>
+
+      <h2>3) Finalités &amp; bases légales (RGPD)</h2>
+      <ul>
+        <li><strong>Envoi du guide / ressources promises</strong> — Exécution d’un contrat (art. 6-1-b).</li>
+        <li><strong>Newsletters et offres liées à ImmoFlow</strong> — Consentement (art. 6-1-a). Vous pouvez retirer votre consentement à tout moment.</li>
+        <li><strong>Amélioration du site et mesure d’audience</strong> — Intérêt légitime (art. 6-1-f) via analytics respectueux de la vie privée.</li>
+        <li><strong>Réponse à vos demandes / support</strong> — Intérêt légitime ou exécution d’un contrat.</li>
+      </ul>
+
+      <h2>4) Destinataires &amp; sous-traitants</h2>
+      <p>Nous pouvons partager des données avec des prestataires strictement nécessaires à la fourniture du service&nbsp;:</p>
+      <ul>
+        <li>Hébergement et diffusion du site (ex.&nbsp;: Vercel).</li>
+        <li>Collecte de formulaires et automatisations (ex.&nbsp;: Formspree, Make).</li>
+        <li>Envoi d’e-mails transactionnels / marketing (ex.&nbsp;: {{Brevo/Resend/Gmail}}).</li>
+        <li>Analytics respectueux (ex.&nbsp;: {{Plausible/Matomo}}).</li>
+      </ul>
+      <p>Ces prestataires agissent selon nos instructions et offrent des garanties adéquates (art.&nbsp;28 RGPD). Aucun transfert non nécessaire n’est effectué.</p>
+
+      <h2>5) Cookies &amp; mesures d’audience</h2>
+      <p>Nous utilisons des cookies/traceurs strictement nécessaires au fonctionnement du site et, le cas échéant, des cookies d’audience respectueux (sans suivi publicitaire).</p>
+      <div class="note">Vous pouvez gérer vos préférences via la bannière cookies (si affichée) ou depuis les réglages de votre navigateur.</div>
+
+      <h2>6) Durées de conservation</h2>
+      <ul>
+        <li>Données de contact (prospects)&nbsp;: jusqu’à <strong>3&nbsp;ans</strong> après le dernier échange ou jusqu’au retrait du consentement.</li>
+        <li>Logs techniques/analytics agrégés&nbsp;: de <strong>13&nbsp;mois</strong> à <strong>25&nbsp;mois</strong> selon l’outil.</li>
+      </ul>
+
+      <h2>7) Vos droits</h2>
+      <p>Conformément au RGPD, vous disposez des droits d’accès, de rectification, d’effacement, d’opposition, de limitation, de portabilité, et du droit d’introduire une réclamation auprès de la CNIL.</p>
+
+      <h2>8) Exercer vos droits</h2>
+      <p>Contactez-nous à <a href="mailto:{{EMAIL_DPO}}">{{EMAIL_DPO}}</a> en précisant l’objet de votre demande et l’adresse e-mail concernée. Nous répondrons sous <strong>30&nbsp;jours</strong>.</p>
+
+      <h2>9) Sécurité</h2>
+      <p>Nous mettons en œuvre des mesures techniques et organisationnelles appropriées (chiffrement TLS, contrôle d’accès, minimisation des données). Aucune méthode n’offrant une sécurité absolue, nous vous invitons à rester vigilants.</p>
+
+      <h2>10) Données de mineurs</h2>
+      <p>Nos services s’adressent à des personnes majeures. Si vous pensez qu’un mineur nous a transmis des données, contactez-nous pour suppression.</p>
+
+      <h2>11) Transferts hors UE</h2>
+      <p>Certains prestataires peuvent être situés hors UE. Lorsque c’est le cas, nous nous assurons de garanties adéquates (clauses contractuelles types, pays adéquats).</p>
+
+      <h2>12) Modifications de la politique</h2>
+      <p>Nous pouvons mettre à jour cette politique pour refléter des changements légaux ou fonctionnels. La date de mise à jour figure en haut de page.</p>
+
+      <div class="divider"></div>
+      <h2>Contact</h2>
+      <p>
+        <strong>Immoflow</strong><br>
+        44 Rue Auguste Gal 06300 Nice — <a href="mailto:ait.mus06@gmail.com">Email</a><br>
+      </p>
+
+      <p class="footer">
+        © 2025 ImmoFlow — Tous droits réservés
+      </p>
+    </div>
+  </main>
+</body>
+</html>
