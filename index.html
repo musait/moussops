@@ -94,15 +94,31 @@
       class="mt-6 sm:mt-7 card p-3 sm:p-4 js-waitlist"
       action="https://hook.eu2.make.com/h6thocpoa29kf47t8l2b58d9zh5mt8lj"
       method="POST">
-  	<div class="flex flex-col sm:flex-row gap-3">
-	<input type="email" name="email" required placeholder="Ton email"
-		   class="flex-1 w-full bg-white/80 border border-black/10 rounded-xl px-4 py-3
-				  text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90" />
-	<input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-	<button id="waitlistBtn" class="btn btn-primary w-full sm:w-auto flex justify-center">
-	  Rejoindre la liste d’attente →
-	</button>
-	</div>
+        <div style="flex flex-col sm:flex-row gap-3">
+
+  <!-- Champs prénom + email -->
+          <div style="display:flex; gap:10px; width:100%;">
+            <input type="text" 
+                   placeholder="Ton prénom" 
+                   style="flex:1; padding:14px; border:1px solid #ddd; border-radius:8px; font-size:14px;"
+                   class="text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90">
+            <input type="email" 
+                   placeholder="Ton email" 
+                   style="flex:1; padding:14px; border:1px solid #ddd; border-radius:8px; font-size:14px;"
+                   class="text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90">
+          </div>
+        
+          <!-- Bouton -->
+          <button class="btn btn-primary w-full sm:w-auto flex justify-center" style="margin-top:20px">
+            Rejoindre la liste d’attente →
+          </button>
+        
+          <!-- Message confirmation -->
+          <p style="margin-top:10px; font-size:14px; color:green; text-align:center;">
+            Merci 🙌 Vérifie ta boîte mail.
+          </p>
+        
+        </div>
 
 	  <!-- messages -->
 	  <p class="mt-3 hidden text-green-700 js-ok">Merci 🙌 Vérifie ta boîte mail.</p>
@@ -274,23 +290,28 @@
 
       <!-- Mobile: input + boutons empilés ; Desktop: identique à avant -->
 	    <form
-      class="mt-6 sm:mt-7 card p-3 sm:p-4 js-waitlist"
-      action="https://hook.eu2.make.com/h6thocpoa29kf47t8l2b58d9zh5mt8lj"
-      method="POST">
-  	<div class="flex flex-col sm:flex-row gap-3">
-	<input type="email" name="email" required placeholder="Ton email"
-		   class="flex-1 w-full bg-white/80 border border-black/10 rounded-xl px-4 py-3
-				  text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90" />
-	<input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-	<button id="waitlistBtn" class="btn btn-primary w-full sm:w-auto flex justify-center">
-	  Rejoindre la liste d’attente →
-	</button>
-	</div>
+          class="mt-6 sm:mt-7 card p-3 sm:p-4 js-waitlist"
+          action="https://hook.eu2.make.com/h6thocpoa29kf47t8l2b58d9zh5mt8lj"
+          method="POST">
+  	        <div style="display:flex; gap:10px; width:100%;">
+                <input type="text" 
+                       placeholder="Ton prénom" 
+                       style="flex:1; padding:14px; border:1px solid #ddd; border-radius:8px; font-size:14px;"
+                       class="text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90">
+                <input type="email" 
+                       placeholder="Ton email" 
+                       style="flex:1; padding:14px; border:1px solid #ddd; border-radius:8px; font-size:14px;"
+                       class="text-[#2C3E50] placeholder:text-[#D97B66] placeholder:opacity-90">
+          <!-- Bouton -->
+               <button class="btn btn-primary w-full sm:w-auto flex justify-center" style="margin-top:20px">
+                Rejoindre la liste d’attente →
+                </button>
+            </div>
 
 	  <!-- messages -->
-	  <p class="mt-3 hidden text-green-700 js-ok">Merci 🙌 Vérifie ta boîte mail.</p>
-	  <p class="mt-3 hidden text-red-700 js-err">Oups… réessaie dans un instant.</p>
-	</form>
+    	  <p class="mt-3 hidden text-green-700 js-ok">Merci 🙌 Vérifie ta boîte mail.</p>
+    	  <p class="mt-3 hidden text-red-700 js-err">Oups… réessaie dans un instant.</p>
+    	</form>
 
       <div class="mt-5 text-sm text-[var(--muted)]">Zéro spam. Désinscription en un clic.</div>
       <div class="divider my-8"></div>
