@@ -349,16 +349,16 @@
 		    });
 		
 		    if (res.ok) {
-		      ok.classList.remove('hidden');
-		      e.target.reset();
-		    } else {
-		      err.classList.remove('hidden');
-		    }
-		  } catch {
-		    err.classList.remove('hidden');
-		  } finally {
-		    btn.disabled = false; btn.textContent = 'Rejoindre la liste d’attente →';
-		  }
+	          form.reset();
+	          ok && ok.classList.remove('hidden');
+	        } else {
+	          err && err.classList.remove('hidden');
+	        }
+	      } catch {
+	        err && err.classList.remove('hidden');
+	      } finally {
+	        if (btn) { btn.disabled = false; btn.style.opacity = 1; btn.textContent = 'Rejoindre la liste d’attente →'; }
+	      }
 	    });
 	  });
 	})();
