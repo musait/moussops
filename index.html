@@ -343,7 +343,10 @@
     };
 	        const res  = await fetch(form.action, {
 	          method: 'POST',
-	          body: data,
+	          body: JSON.stringify({
+			    first_name: document.getElementById("firstName").value,
+			    email: document.getElementById("email").value
+			  }),
 	          headers: { 'Accept': 'application/json' }
 	        });
 	
